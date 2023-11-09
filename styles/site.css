@@ -1,0 +1,25 @@
+.body-container {
+  background-color: #3f3939;
+  display: grid;
+  columns: 1fr 1fr;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.back-icon {
+  color: #fff;
+  width: 10px;
+  height: 10px;
+}
+
+.blog-text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+}
