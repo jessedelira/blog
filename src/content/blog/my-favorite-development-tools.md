@@ -8,16 +8,14 @@ draft: false
 tags:
   - config
   - tools
-description: Diving deep into my developer tools and configs for 2025
+description: How I use my favorite developer tools!
 ---
 
 ## table of contents
 
 ## intro (don't spare the details)
 
-Some of my favorite developer content on YouTube is developer tools and config breakdowns, these videos have shown me plenty of amazing tools that I would have never found otherwise. There are always new tools coming out so it is nice to see these summarized so nicely, on the other hand I have noticed a lack of depth on what the tools are used for by each person (everyone uses them differently). 
-
-A majority of the time I'm left asking myself questions about the situations they use them (who, what, where, why, when)
+Some of my favorite developer content on YouTube is developer tools and config breakdowns, these videos have shown me plenty of amazing tools that I would have never found otherwise. This post to explain some of the toosl
 
 Example:
 
@@ -30,17 +28,19 @@ Example:
 ## tools & configs
 
 ### personal tech stack
-I mostly develop in TypeScript in personal projects, some C#.
 
+I mostly develop in TypeScript in personal projects, some C#.
 
 ### VS Code/Cursor: Editor/IDE
 
 ### DataGrip: Database Tool
 
-### Browser
+### Browser`
+
 Chrome is boring, but it works. I have given plenty of different browsers a chance (zen, arc, firefox)
 
-### Terminal 
+### Terminal
+
 (Ghostty + Zsh)
 
 ### Docker 🐳

@@ -22,13 +22,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
+    <section id="hero" class="hero-section">
       <div class="greeting-container">
         <h1 id="greeting">Welcome!</h1>
       </div>
       <p>
-        My name is Jesse. I'm a software engineer and I create things. This is a
-        place to share my findings/thoughts on a variety of topics
+        My name is Jesse. This is a place to share my findings/thoughts on a
+        variety of topics
       </p>
       {
         // only display if at least one social link is enabled
@@ -136,10 +136,22 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
 
   .greeting-container {
-    height: 85px;
+    /* Default styles for mobile (under 640px) */
+    height: 50px;
     overflow: hidden;
     position: relative;
-    padding-bottom: 10px;
+    /* Other styling properties */
+  }
+
+  /* For screens 640px and wider */
+  @media (min-width: 640px) {
+    .greeting-container {
+      height: 85px;
+    }
+  }
+
+  .hero-section {
+    padding-top: 5px !important;
   }
 
   #greeting {
