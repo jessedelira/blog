@@ -3,9 +3,9 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   author: "Jesse De Lira",
-  profile: "https://satnaing.dev/",
+  profile: "https://jessedelira.dev",
   desc: "A place to share my findings",
-  title: "Easily Distracted Dev",
+  title: "jessedelira.dev",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
@@ -13,7 +13,7 @@ export const SITE: Site = {
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,
   editPost: {
-    url: "https://github.com/jessedelira/easily-distracted.dev/edit/main/src/content/blog",
+    url: "https://github.com/jessedelira/blog/edit/main/src/content/blog",
     text: "Suggest Changes",
     appendFilePath: true,
   },
