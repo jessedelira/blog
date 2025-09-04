@@ -22,39 +22,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
-      <h1>Mingalaba</h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="rss-link"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
-          ><path
-            d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-          ></path><path
-            d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-          ></path><circle cx="6" cy="18" r="2"></circle>
-        </svg>
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
+    <section id="hero" class="hero-section">
+      <div class="greeting-container">
+        <h1 id="greeting">Welcome!</h1>
+      </div>
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
-      <p>
-        Read the blog posts or check
-        <LinkButton
-          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
+        My name is Jesse. This is a place to share my findings/thoughts on a
+        variety of topics
       </p>
       {
         // only display if at least one social link is enabled
@@ -120,8 +94,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </LinkButton>
     </div>
   </main>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -160,4 +132,100 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
   }
+
+  .greeting-container {
+    /* Default styles for mobile (under 640px) */
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    /* Other styling properties */
+  }
+
+  /* For screens 640px and wider */
+  @media (min-width: 640px) {
+    .greeting-container {
+      height: 85px;
+    }
+  }
+
+  .hero-section {
+    padding-top: 5px !important;
+  }
+
+  #greeting {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s ease-in-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 </style>
+
+<script>
+  // "Welcome!" is added at the end to ensure it is a loop, since we need to define a greeting at the start of page load
+  const greetings = [
+    "Bienvenido!",
+    "Willkommen!",
+    "Mingalaba!",
+    "こんにちは!",
+    "Welcome!",
+  ];
+
+  const greetingElement = document.getElementById("greeting");
+  let currentIndex = 0;
+
+  function updateGreeting() {
+    const nextIndex = (currentIndex + 1) % greetings.length;
+    if (!greetingElement) return;
+    if (greetings[nextIndex] === greetingElement.textContent) {
+      return;
+    }
+
+    greetingElement.classList.add("slide-up");
+
+    setTimeout(() => {
+      currentIndex = nextIndex;
+      greetingElement.textContent = greetings[currentIndex];
+      greetingElement.classList.remove("slide-up");
+      greetingElement.classList.add("slide-in");
+
+      setTimeout(() => {
+        greetingElement.classList.remove("slide-in");
+      }, 500);
+    }, 450);
+  }
+
+  setInterval(updateGreeting, 3000);
+</script>
